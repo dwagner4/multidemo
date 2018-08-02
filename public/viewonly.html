@@ -16,15 +16,37 @@
 				font-family: arial;
 			}
 		</style>
+
+	</head>
+
+  <body>
+
+    <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyAvJCaZHqsTA0wz0CWsxW0ThIF2Nxhgefg",
+        authDomain: "aframe-exp.firebaseapp.com",
+        databaseURL: "https://aframe-exp.firebaseio.com",
+        projectId: "aframe-exp",
+        storageBucket: "aframe-exp.appspot.com",
+        messagingSenderId: "70568589081"
+      };
+      firebase.initializeApp(config);
+      // console.log("before");
+      // firebase.database().ref('/dynamic').on('value', function (snapshot){
+      //   console.log("yahoo!!!!");
+      //   var hopper = snapshot.val();
+      //   console.log( hopper );
+      // });
+      // console.log("after 2");
+    </script>
     <script src="js/three.js"></script>
     <script src="js/controls/OrbitControls.js"></script>
     <script src="modules/environments/planegrid.js"></script>
     <script src="modules/lighting/hemilight.js"></script>
     <script src="modules/cameras/orbitmodule.js"></script>
     <script src="modules/objects/boxObj.js"></script>
-	</head>
-
-  <body>
     <script>
       window.addEventListener( 'resize', onWindowResize, false );
       let container = document.body;
@@ -47,6 +69,8 @@
       makeLights( scene, world );
       makeBackground( scene, world );
       makeObjects ( scene, world );
+
+
 
       animate();
 
